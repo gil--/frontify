@@ -1,0 +1,32 @@
+{
+  "name": "timber",
+  "version": "2.1.6",
+  "keywords": [
+    "shopify",
+    "theme",
+    "framework",
+    "css",
+    "js",
+    "sass",
+    "mobile-first",
+    "responsive",
+    "front-end"
+  ],
+  "main": [
+    "assets/*",
+    "config/*",
+    "layout/*",
+    "snippets/*",
+    "templates/*",
+    "locales/*"
+  ],
+  "ignore": [
+    ".*"
+  ],
+  "homepage": "https://github.com/Shopify/Timber",
+  "authors": [
+    "Carson Shold <carson.shold@shopify.com>"
+  ],
+  "description": "The Ultimate Shopify Theme Framework",
+  "license": "MIT"
+}

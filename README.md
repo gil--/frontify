@@ -23,9 +23,12 @@ I recommended replacing shop with the latest Timber release and then making the 
 
 ## FAQ
 **I don't use Webpack!**
+
 You are welcome to switch out Webpack for Browserify inside the Gulp js task.
 
+
 **How do I get liquid variables to work in my Scss?**
+
 Make sure to escape the liquid variables using [Sass's string interpolation](https://github.com/luciddesign/bootstrapify/wiki/Escaping-liquid-in-SASS):
 
 ```sass

@@ -27,8 +27,8 @@ $breakpoint-has-pull:  ('medium', 'medium-down', 'large');
 ==============================================================================*/
 
 /* Timber Colors */
-$colorPrimary: {{ settings.color_primary }};
-$colorSecondary: {{ settings.color_secondary }};
+$colorPrimary: $(color_primary);
+$colorSecondary: $(color_secondary);
 
 /* Button colors */
 $colorBtnPrimary: $colorPrimary;
@@ -46,24 +46,24 @@ $colorLink: $colorPrimary;
 $colorLinkHover: lighten($colorPrimary, 15%);
 
 /* Text colors */
-$colorTextBody: {{ settings.color_body_text }};
+$colorTextBody: $(settings.color_body_text);
 
 // Backgrounds
-$colorBody: {{ settings.color_body_bg }};
+$colorBody: $(settings.color_body_bg);
 
 // Border colors
-$colorBorder: {{ settings.color_borders }};
+$colorBorder: $(settings.color_borders);
 
 // Nav and dropdown link background
 $colorNav: #f2f2f2;
 $colorNavText: #333;
 
 // Site Footer
-$colorFooterBg: {{ settings.color_footer_bg }};
-$colorFooterText: {{ settings.color_footer_text }};
+$colorFooterBg: $(settings.color_footer_bg);
+$colorFooterText: $(settings.color_footer_text);
 
 // Logo max width
-$logoMaxWidth: {{ settings.logo_max_width | default: '450' | remove: 'px' }}px;
+$logoMaxWidth: $(settings.logo_max_width | default: '450' | remove: 'px')px;
 
 // Helper colors
 $disabledGrey: #f6f6f6;

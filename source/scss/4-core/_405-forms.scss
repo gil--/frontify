@@ -123,12 +123,10 @@ select {
      -moz-appearance: none;
           appearance: none;
   background-position: right center;
-  background: {
-    image: url('{{ "ico-select.svg" | asset_url }}');
-    repeat: no-repeat;
-    position: right 10px center;
-    color: transparent;
-  }
+  // background-image: url('{{ "ico-select.svg" | asset_url }}');
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-color: transparent;
   padding-right: 28px;
   text-indent: 0.01px;
   text-overflow: '';

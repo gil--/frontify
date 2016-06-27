@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icons';
-  src: url('$("icons.eot" | asset_url)');
-  src: url('$("icons.eot" | asset_url)#iefix') format("embedded-opentype"),
-       url('$("icons.woff" | asset_url)') format("woff"),
-       url('$("icons.ttf" | asset_url)') format("truetype"),
-       url('$("icons.svg" | asset_url)#timber-icons') format("svg");
+  src: url(icons.eot);
+  src: url(icons.eot#iefix') format("embedded-opentype"),
+       url(icons.woff') format("woff"),
+       url(icons.ttf') format("truetype"),
+       url(icons.svg#timber-icons') format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -66,7 +66,7 @@ $socialIconFontStack: 'icons';
 
   li {
     margin: 0 ($gutter / 4) ($gutter / 4);
-    color: $(settings.color_footer_social_link);
+    color: $(color_footer_social_link);
     cursor: default;
   }
 
@@ -94,10 +94,10 @@ $socialIconFontStack: 'icons';
   }
 
   a {
-    color: $(settings.color_footer_social_link);
+    color: $(color_footer_social_link);
 
     &:hover {
-      color: darken($(settings.color_footer_social_link), 10%);
+      color: darken($(color_footer_social_link), 10%);
     }
   }
 }

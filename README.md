@@ -15,7 +15,7 @@ In order to see the new styling, svgs, or Javascript, you will need to edit `sho
 I recommended replacing shop with the latest Timber release and then making the adjustments needed in theme.liquid to support the new compiled assets.
 
 ## What's Included
-- Scss Compilation (Autoprefixer, partials)
+- SCSS Compilation (Autoprefixer, partials)
 - SVG (Sourcemap creation)
 - JS ES6 Compatible (Webpack)
 - Shopify Integration
@@ -24,13 +24,22 @@ I recommended replacing shop with the latest Timber release and then making the 
 ## FAQ
 **I don't use Webpack!**
 
-You are welcome to switch out Webpack for Browserify inside the Gulp js task.
+You are welcome to switch out Webpack for Browserify inside the Gulp JS task.
 
 
 **How do I get liquid variables to work in my Scss?**
 
-Make sure to escape the liquid variables using [Sass's string interpolation](https://github.com/luciddesign/bootstrapify/wiki/Escaping-liquid-in-SASS):
+This repo utilizes *[postcss-shopify-settings-variables](https://github.com/bit3725/postcss-shopify-settings-variables)* in order to retain Shopify Liquid syntax in the SCSS files. Make sure to escape the liquid variables using `$()`
 
 ```sass
- color: #{'{{ settings.link-colour }}'};
+ color: $(settings.link-colour);
 ```
+
+### TODO
+- Add support for browserSync/reload
+- Make SCSS concat easier than prefixing filename with a number
+- Further integrate Webpack bundles into the various Shopify sections
+- Integrate svg4everybody in order to have IE SVG fallback support. Also add the svg symbol file to theme.liquid
+- Move Modernizer and respond.js into the Webpack bundle.
+- Continue to reduce number of separate CSS and JS files.
+- Remove any remaining images inside the styling.

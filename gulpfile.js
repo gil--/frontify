@@ -12,6 +12,10 @@ var notify       = require("gulp-notify");
 // Sass
 var scsslint     = require('gulp-scss-lint');
 var concat       = require('gulp-concat');
+var postcss      = require('gulp-postcss');
+var syntax       = require('postcss-scss'); //add scss parsing support to postcss
+var autoprefixer = require('autoprefixer');
+var shopifyVar   = require('postcss-shopify-settings-variables')
 // JS
 var webpack      = require('webpack-stream');
 // SVG
@@ -23,7 +27,6 @@ var config       = require('./config.json'); // Grabs your API credentials
 
 var basePath = './source/';
 var themePath = './shop/';
-
 
 function handleErrors() {
   var args = Array.prototype.slice.call(arguments);
@@ -45,14 +48,13 @@ gulp.task('scss', function() {
   var sassSources = [
     basePath +'scss/*/*/*.scss',
     basePath +'scss/*/*.scss',
-    basePath +'scss/*.scss'];
-  var processors = [
-    autoprefixer('last 2 version', 'ie 9')
-  ];
+    basePath +'scss/*.scss',
+  '!'+basePath +'scss/theme.scss'];
 
   gulp.src(sassSources)
     .on('error', handleErrors)
     .pipe(concat('timber.scss.liquid'))
+    .pipe( postcss([ autoprefixer, shopifyVar ], { syntax: syntax }) )
     .pipe(gulp.dest(themePath + 'assets/'));
 });
 

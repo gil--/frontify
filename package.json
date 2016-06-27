@@ -15,6 +15,7 @@
     "gulp-svgmin": "^1.2.2",
     "gulp-svgstore": "^6.0.0",
     "gulp-watch": "^4.3.8",
+    "postcss-shopify-settings-variables": "^0.1.4",
     "script-loader": "^0.7.0",
     "webpack": "^1.13.1",
     "webpack-stream": "^3.2.0"

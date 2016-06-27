@@ -78,8 +78,6 @@
   #Ajax Cart Styles (conditionally loaded)
 ==============================================================================*/
 
-{% if settings.ajax_cart_method == "drawer" %}
-
 .ajaxcart__inner {
   margin-bottom: $gutter;
 }
@@ -215,5 +213,3 @@
 .ajaxcart-item__price-strikethrough {
   float: right;
 }
-
-{% endif %} // settings.ajax_cart_method

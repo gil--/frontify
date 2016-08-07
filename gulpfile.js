@@ -44,7 +44,7 @@ function handleErrors() {
 /*============================================================================
   Scss Compilation
 ==============================================================================*/
-gulp.task('scss', function() {
+gulp.task('styles', function() {
   var sassSources = [
     basePath +'scss/*/*/*.scss',
     basePath +'scss/*/*.scss',
@@ -70,8 +70,8 @@ gulp.task('scss-lint', function() {
 /*============================================================================
   JS Compilation
 ==============================================================================*/
-gulp.task('js', function() {
-  return gulp.src(basePath + 'js/src/global/global.js')
+gulp.task('scripts', function() {
+  return gulp.src(basePath + 'js/bundles/global/global.js')
       .pipe(webpack(require('./webpack.config.js')))
       .pipe(gulp.dest(themePath + 'assets/'));
 });
@@ -96,8 +96,8 @@ gulp.task('svg', function() {
   Asset Watch
 ==============================================================================*/
 gulp.task('watch', function () {
-  gulp.watch(basePath + 'scss/**/*.scss', ['scss']);
-  gulp.watch(basePath + 'js/**/*.js', ['js']);
+  gulp.watch(basePath + 'scss/**/*.scss', ['styles']);
+  gulp.watch(basePath + 'js/**/*.js', ['scripts']);
   gulp.watch(basePath + 'svg/*.svg}', ['svg']);
 });
 
@@ -105,15 +105,19 @@ gulp.task('watch', function () {
 /*============================================================================
   Shopify Theme Sync
 ==============================================================================*/
-gulp.task('shopifywatch', function() {
-  var options = {
-    "basePath": "./shop/"
-  };
+var shopifyOptions = {
+  "basePath": themePath
+};
 
+gulp.task('shopifywatch', function() {
   return watch('./shop/+(assets|layout|config|snippets|templates|locales)/**')
-  .pipe(gulpShopify(config.shopify_api_key, config.shopify_api_password, config.shopify_url, null, options));
+  .pipe(gulpShopify(config.shopify_api_key, config.shopify_api_password, config.shopify_url, null, shopifyOptions));
 });
 
+gulp.task('deploy', ['styles', 'scripts', 'svg'], function() {
+  return gulp.src('./shop/+(assets|layout|config|snippets|templates|locales)/**')
+    .pipe(gulpShopify(config.shopify_api_key, config.shopify_api_password, config.shopify_url,  null, shopifyOptions));
+});
 
 
 /*============================================================================

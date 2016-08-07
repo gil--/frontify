@@ -7,7 +7,7 @@ This is an example setup for Shopify theme development using Gulp task automatio
 
 1. Download or git clone this repo.
 2. Run `npm install` to install all dependencies from package.json
-3. Create a private application on your store and enter the API credentials inside *config.json*
+3. Create a private application on your store. Duplicate config.example.json as config.json and enter the API credentials from the private application you just created.
 4. Run `gulp` and change a file. It will then automatically get pushed to Shopify.
 5. Run `gulp deploy` to deploy the theme for continuous deployment.
 

@@ -9,6 +9,7 @@ This is an example setup for Shopify theme development using Gulp task automatio
 2. Run `npm install` to install all dependencies from package.json
 3. Create a private application on your store and enter the API credentials inside *config.json*
 4. Run `gulp` and change a file. It will then automatically get pushed to Shopify.
+5. Run `gulp deploy` to deploy the theme for continuous deployment.
 
 In order to see the new styling, svgs, or Javascript, you will need to edit `shop/layout/theme.liquid` and reference the correct paths.
 
@@ -43,3 +44,5 @@ This repo utilizes *[postcss-shopify-settings-variables](https://github.com/bit3
 - Move Modernizer and respond.js into the Webpack bundle.
 - Continue to reduce number of separate CSS and JS files.
 - Remove any remaining images inside the styling.
+- Image minification
+- JS/CSS linting

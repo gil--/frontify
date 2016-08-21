@@ -8,8 +8,11 @@ This is an example setup for Shopify theme development using Gulp task automatio
 1. Download or git clone this repo.
 2. Run `npm install` to install all dependencies from package.json
 3. Create a private application on your store. Duplicate config.example.json as config.json and enter the API credentials from the private application you just created.
-4. Run `gulp` and change a file. It will then automatically get pushed to Shopify.
-5. Run `gulp deploy` to deploy the theme for continuous deployment.
+4. Run 'gulp build` to do an initial build of theme assets.
+5. Inside the `shop` sub-directory, run `theme configure -access_token YOUR_STORE_API_ACCESS_TOKEN_HERE -password YOUR_STORE_API_PASSWORD_HERE -domain YOUR_STORE_DOMAIN_HERE.myshopify.com` to create a Shopify Gem Config file.
+6. Now we will repace the default Shopify theme with our own by running `theme replace`.
+7. Run `gulp` and change a file. It will then automatically get pushed to Shopify.
+8. Run `gulp deploy` to deploy the theme for continuous deployment. This will prevent the gulp watch task from running allowing for a single-instance deployment.
 
 In order to see the new styling, svgs, or Javascript, you will need to edit `shop/layout/theme.liquid` and reference the correct paths.
 

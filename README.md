@@ -1,5 +1,7 @@
 # Frontify - A Shopify Frontend Workflow with Gulp + Webpack + Timber + More!
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/gil--/frontify.svg)](https://greenkeeper.io/)
+
 This is an example setup for Shopify theme development using Gulp task automation along with Webpack (Javascript) and the Shopify Timber base theme.
 
 
